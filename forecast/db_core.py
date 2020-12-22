@@ -53,12 +53,12 @@ class Database:
     def get_conn(self):
         return self.conn
     
-#dc connection memsql
+#dc connection 
 from core import quote
 from core import Config
 
 
-#memsql connect
+# connect
 def get_con_memsql():
     db_memsql = Config.get_key('memsql')
     return  Database( host=db_memsql["connection"]["host"],
@@ -68,7 +68,7 @@ def get_con_memsql():
                 database=db_memsql["connection"]["db"])
 
 
-# Connect to HANA
+# DB connect
 def get_con_hana():
     db_hana = Config.get_key('hana')
     return  Database( host=db_hana["connection"]["host"],
